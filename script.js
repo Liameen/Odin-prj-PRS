@@ -1,36 +1,50 @@
 function computerPlay(){
 
-   let cpuChoice =  Math.floor((Math.random() * 9) + 1);
+   let cpuBrain =  Math.floor((Math.random() * 9) + 1);
 
-   if(cpuChoice <= 3) {
-    console.log('Paper');
-   } else if(cpuChoice <= 6 && cpuChoice > 3) {
-    console.log('Rock');
+   console.log(cpuBrain);
+
+   if(cpuBrain <= 3) {
+    return 'Paper';
+   } else if(cpuBrain <= 6 && cpuBrain > 3) {
+    return 'Rock';
    } else {
-    console.log('Scissor');
+    return 'Scissor';
    }
-
-   return cpuChoice ;
-
-}
-
-
-function playRound(plySelection, cpuSelection){
-
-
-}
-
-function game(){
-
+   
 }
 
 
 
 
-for (let i = 0; i < 5; i++) {
-    // your code here!
+
+
+ function playRound (cpuSelect, plySelect) {
+
+   if (cpuSelect === 'Scissor' && plySelect === 'Rock'){
+      alert(cpuSelect + ' vs ' + plySelect + ' you win!')
+   }
+ 
+ }
+ 
+
+
+
+
+// function game(){
+
+//    console.log(playRound(plySelect, cpuSelect))
+
+// }
+
+ for (let i = 0; i < 5; i++) {
+    
+   
+   let cpu = computerPlay();
+   let ply = 'Rock';
+   
+   playRound(cpu, ply);
+
  }
 
- console.log(computerPlay( ))
- 
 
