@@ -1,6 +1,8 @@
  let score = 0;
 
-
+ const buttP = document.querySelector('buttPaper');
+ const buttR = document.querySelector('buttRock');
+ const buttS = document.querySelector('buttScissors');
 
 
 
@@ -98,20 +100,20 @@ function humanPlay(){
 
 
 
-function game(){
+// function game(){
 
-      for (let i = 0; i < 5; i++) {
+//       for (let i = 0; i < 5; i++) {
          
          
-         let plySelect = humanPlay();
-         let cpuSelect = computerPlay();
+//          let plySelect = humanPlay();
+//          let cpuSelect = computerPlay();
                   
-         playRound(cpuSelect, plySelect);
+//          playRound(cpuSelect, plySelect);
 
-         alert(`your score is ${score}`)
+//          alert(`your score is ${score}`)
 
-      }
-}
+//       }
+// }
 
 
 
@@ -121,5 +123,3 @@ function youWin(){
 }
 
 
-
-game();
