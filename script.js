@@ -1,8 +1,27 @@
  let score = 0;
+ let plySelect;
 
- const buttP = document.querySelector('buttPaper');
- const buttR = document.querySelector('buttRock');
- const buttS = document.querySelector('buttScissors');
+
+ // tester function
+ function test(){
+   alert('test');
+}
+
+
+
+ const buttP = document.querySelector('#Paper');
+ const buttR = document.querySelector('#Rock');
+ const buttS = document.querySelector('#Scissors');
+
+ const buttons = document.querySelectorAll('.btn');
+
+
+
+
+// event listeners
+buttons.forEach((button) => {
+   button.addEventListener('click', game)
+});
 
 
 
@@ -20,77 +39,95 @@ function computerPlay(){
    } else if(cpuBrain <= 6 && cpuBrain > 3) {
     return 'Rock';
    } else {
-    return 'Scissor';
+    return 'Scissors';
    }
 }
 
 
+//ply input value
 
+// function humanPlay(){
 
-
-
-// ply prompt and input value
-
-function humanPlay(){
-
-  let plyBrain = prompt('Choose your weapon!', 'Scissor, Paper or Rock!');
-
-   return plyBrain;
- }
-
-
-
-
-
-
+//    let plyBrain = addEventListener;
  
- 
+//     return plyBrain;
+//   }
 
- function playRound(cpuSelect, plySelect) {
 
-   if (cpuSelect === 'Scissor') {
-     firstChoice();
+// ply choice vs cpu
+
+function playRound(cpuSelect, plySelect) {
+
+   plySelect = buttons.id;
+
+
+   if (plySelect === buttS) {
+      alert('yes');
+      //firstChoice();
      } 
-  else if (cpuSelect === 'Rock') {
+  else if (plySelect === buttR) {
       secondChoice();
-   } if (cpuSelect === 'Paper') {
+   } if (plySelect === buttP) {
       thirdChoice();
    }
   
+
+//  eventualities and logic
+
    function firstChoice(){
          
-      if (cpuSelect === 'Scissor' && plySelect === 'Rock'){
+      if (plySelect === 'Scissors' && cpuSelect === 'Rock'){
          youWin();
-      } else if (cpuSelect === 'Scissor' && plySelect === 'Paper'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you lose!');
-      } if (cpuSelect === 'Scissor' && plySelect === 'Scissor'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you drew!');
+      } else if (plySelect === 'Scissors' && cpuSelect === 'Paper'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!');
+      } if (plySelect === 'Scissors' && cpuSelect === 'Scissors'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!');
       }      
    }
    
    function secondChoice(){
    
-      if (cpuSelect === 'Rock' && plySelect === 'Paper'){
+      if (plySelect === 'Rock' && cpuSelect === 'Paper'){
          youWin();
-      } else if (cpuSelect === 'Rock' && plySelect === 'Scissor'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you lose!')
-      } if (cpuSelect === 'Rock' && plySelect === 'Rock'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you drew!')
+      } else if (plySelect === 'Rock' && cpuSelect === 'Scissors'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!')
+      } if (plySelect === 'Rock' && cpuSelect === 'Rock'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!')
       }
    }
    
    function thirdChoice(){
    
-      if (cpuSelect === 'Paper' && plySelect === 'Scissor'){
+      if (plySelect === 'Paper' && cpuSelect === 'Scissors'){
          youWin();
-      } else if (cpuSelect === 'Paper' && plySelect === 'Rock'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you lose!')
-      } if (cpuSelect === 'Paper' && plySelect === 'Paper'){
-         alert(cpuSelect + ' vs ' + ' your ' +  plySelect + ' you drew!')
+      } else if (plySelect === 'Paper' && cpuSelect === 'Rock'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!')
+      } if (plySelect === 'Paper' && cpuSelect === 'Paper'){
+         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!')
       }
    }
 
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
 
 
 
@@ -100,20 +137,17 @@ function humanPlay(){
 
 
 
-// function game(){
-
-//       for (let i = 0; i < 5; i++) {
+function game(){
          
-         
-//          let plySelect = humanPlay();
-//          let cpuSelect = computerPlay();
-                  
-//          playRound(cpuSelect, plySelect);
+         let plySelect = buttons.id;
+         let cpuSelect = computerPlay();
+                  console.log(plySelect)
+         playRound(cpuSelect, plySelect);
 
-//          alert(`your score is ${score}`)
+         //alert(`your score is ${score}`)
 
-//       }
-// }
+     
+}
 
 
 
