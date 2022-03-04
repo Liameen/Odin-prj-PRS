@@ -1,24 +1,25 @@
- let score = 0;
- let plySelect = '';
+let score = 0;
+let plySelect = '';
+let scoreSpan = document.querySelector('#score');
 
 
 
+//buttons
 
+const buttP = document.querySelector('#Paper');
+const buttR = document.querySelector('#Rock');
+const buttS = document.querySelector('#Scissors');
 
-
- const buttP = document.querySelector('#Paper');
- const buttR = document.querySelector('#Rock');
- const buttS = document.querySelector('#Scissors');
-
- const buttons = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll('.btn');
  
 
-  
+
 
 
 // event listeners
 buttons.forEach((button) => {
    button.addEventListener('click', game)
+   
 });
 
 
@@ -122,43 +123,15 @@ function playRound(cpuSelect, plySelect) {
         console.log(cpuSelect)
 playRound(cpuSelect, plySelect);
 
-alert(`your score is ${score}`)
 
-
+ 
+ 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
- 
-
-
-
-
-
-
 
 
 function youWin(){
    alert('you win!'); 
-   return score += 1;
+   return scoreSpan.textContent = ++score;
 }
 
 
