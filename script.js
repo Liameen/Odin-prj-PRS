@@ -1,11 +1,8 @@
  let score = 0;
- let plySelect;
+ let plySelect = '';
 
 
- // tester function
- function test(){
-   alert('test');
-}
+
 
 
 
@@ -14,8 +11,9 @@
  const buttS = document.querySelector('#Scissors');
 
  const buttons = document.querySelectorAll('.btn');
+ 
 
-
+  
 
 
 // event listeners
@@ -24,7 +22,10 @@ buttons.forEach((button) => {
 });
 
 
-
+ // tester function
+ function test(){
+   alert('test')
+}
 
 // cpu randomiser
 
@@ -32,7 +33,7 @@ function computerPlay(){
 
    let cpuBrain =  Math.floor((Math.random() * 9) + 1);
 
-   console.log(cpuBrain);
+   //console.log(cpuBrain);
 
    if(cpuBrain <= 3) {
     return 'Paper';
@@ -58,16 +59,14 @@ function computerPlay(){
 
 function playRound(cpuSelect, plySelect) {
 
-   plySelect = buttons.id;
 
 
-   if (plySelect === buttS) {
-      alert('yes');
-      //firstChoice();
+   if (plySelect === 'Scissors') {
+      firstChoice();
      } 
-  else if (plySelect === buttR) {
+  else if (plySelect === 'Rock') {
       secondChoice();
-   } if (plySelect === buttP) {
+   } if (plySelect === 'Paper') {
       thirdChoice();
    }
   
@@ -110,44 +109,50 @@ function playRound(cpuSelect, plySelect) {
  }
 
 
+ function game(){
 
+         buttons.forEach((buttonTag) => {
+            plySelect = buttonTag.id
+         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
- 
-
-
-
-
-function game(){
          
-         let plySelect = buttons.id;
-         let cpuSelect = computerPlay();
-                  console.log(plySelect)
-         playRound(cpuSelect, plySelect);
+       
+   let cpuSelect = computerPlay();
+        console.log(plySelect)
+        console.log(cpuSelect)
+playRound(cpuSelect, plySelect);
 
-         //alert(`your score is ${score}`)
+alert(`your score is ${score}`)
 
-     
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+
 
 
 
