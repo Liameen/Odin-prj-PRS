@@ -1,6 +1,10 @@
-let score = 0;
+let plyScore = 0;
+let cpuScore = 0;
 let plySelect = '';
-let scoreSpan = document.querySelector('#score');
+let plyScoreSpan = document.querySelector('#plyScore');
+let cpuScoreSpan = document.querySelector('#cpuScore');
+let outcome = document.querySelector('#outcome');
+let wpnChoice = document.querySelector('#wpnChoice')
 
 
 
@@ -77,34 +81,46 @@ function playRound(cpuSelect, plySelect) {
    function firstChoice(){
          
       if (plySelect === 'Scissors' && cpuSelect === 'Rock'){
-         youWin();
+         cpuScoreSpan.textContent = ++cpuScore;
+         outcome.textContent = 'Hard luck, keep trying!';
       } else if (plySelect === 'Scissors' && cpuSelect === 'Paper'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!');
+         plyScoreSpan.textContent = ++plyScore;
+         outcome.textContent = 'Great! You won that round!';
       } if (plySelect === 'Scissors' && cpuSelect === 'Scissors'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!');
+         outcome.textContent = 'A draw! So exciting!!';
       }      
    }
    
    function secondChoice(){
    
       if (plySelect === 'Rock' && cpuSelect === 'Paper'){
-         youWin();
+         cpuScoreSpan.textContent = ++cpuScore;
+         outcome.textContent = 'Hard luck, keep trying!';
       } else if (plySelect === 'Rock' && cpuSelect === 'Scissors'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!')
+         plyScoreSpan.textContent = ++plyScore;
+         outcome.textContent = 'Great! You won that round!';
       } if (plySelect === 'Rock' && cpuSelect === 'Rock'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!')
+        outcome.textContent = 'A draw! So exciting!!';
       }
    }
    
    function thirdChoice(){
    
       if (plySelect === 'Paper' && cpuSelect === 'Scissors'){
-         youWin();
+         cpuScoreSpan.textContent = ++cpuScore;
+         outcome.textContent = 'Hard luck, keep trying!';
       } else if (plySelect === 'Paper' && cpuSelect === 'Rock'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you lose!')
+         plyScoreSpan.textContent = ++plyScore;
+         outcome.textContent = 'Great! You won that round!';
       } if (plySelect === 'Paper' && cpuSelect === 'Paper'){
-         alert(plySelect + ' vs ' + ' your ' +  cpuSelect + ' you drew!')
+         outcome.textContent = 'A draw! So exciting!!';
       }
+   }
+
+   if(plyScore == 5){
+      outcome.textContent = 'YEAH BABY YOU WON!!!';
+   } else if(cpuScore == 5){
+      outcome.textContent = 'woe is you!! You LOST!!!';
    }
 
  }
@@ -113,25 +129,20 @@ function playRound(cpuSelect, plySelect) {
  function game(){
 
          buttons.forEach((buttonTag) => {
-            plySelect = buttonTag.id
+            plySelect = buttonTag.id;
          });
-
-         
        
    let cpuSelect = computerPlay();
         console.log(plySelect)
         console.log(cpuSelect)
-playRound(cpuSelect, plySelect);
+         
+        playRound(cpuSelect, plySelect);
 
+         wpnChoice.textContent = `You chose ${plySelect} and your foe chose ${cpuSelect}`
 
- 
- 
 }
 
 
-function youWin(){
-   alert('you win!'); 
-   return scoreSpan.textContent = ++score;
-}
+
 
 
