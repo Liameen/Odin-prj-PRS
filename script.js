@@ -123,6 +123,14 @@ function playRound(cpuSelect, plySelect) {
       outcome.textContent = 'woe is you!! You LOST!!!';
    }
 
+   // reset button to play again
+   if(outcome.textContent == 'YEAH BABY YOU WON!!!' || outcome.textContent == 'woe is you!! You LOST!!!'){
+      var element = document.createElement('button');
+      element.appendChild(document.createTextNode(' Wanna Play Again?'))
+
+      var page = document.getElementById('replay');
+      page.appendChild(element);
+   }
  }
 
 
