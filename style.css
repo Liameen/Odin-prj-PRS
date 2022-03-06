@@ -5,3 +5,9 @@
 #outcome{
     font-size: 50px;
 }
+
+#buttons{
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+}
