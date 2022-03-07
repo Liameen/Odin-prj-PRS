@@ -14,7 +14,7 @@ const buttP = document.querySelector('#Paper');
 const buttR = document.querySelector('#Rock');
 const buttS = document.querySelector('#Scissors');
 
-const buttons = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll('.img');
  
 
 
