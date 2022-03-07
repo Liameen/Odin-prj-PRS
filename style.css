@@ -3,12 +3,19 @@
 }
 
 #outcome{
-    font-size: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 30px;
 }
 
 #buttons{
     display: flex;
     justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+#wpnChoice{
+    font-size: 30px;
 }
 
 .btn{

@@ -18,13 +18,32 @@ const buttons = document.querySelectorAll('.img');
  
 
 
-
-
 // event listeners
 buttons.forEach((button) => {
    button.addEventListener('click', game)
-   
 });
+
+
+
+// game function
+
+function game(){
+
+   buttons.forEach((buttonTag) => {
+      plySelect = buttonTag.id;
+      console.log(plySelect)
+   });
+ 
+let cpuSelect = computerPlay();
+//   console.log(plySelect)
+//   console.log(cpuSelect)
+   
+  playRound(cpuSelect, plySelect);
+
+   wpnChoice.textContent = `You chose ${plySelect} and your foe chose ${cpuSelect}`
+
+}
+
 
 
  // tester function
@@ -32,13 +51,17 @@ buttons.forEach((button) => {
    alert('test')
 }
 
+
+
 // cpu randomiser
 
 function computerPlay(){
 
    let cpuBrain =  Math.floor((Math.random() * 9) + 1);
 
-   //console.log(cpuBrain);
+
+
+//console.log(cpuBrain);
 
    if(cpuBrain <= 3) {
     return 'Paper';
@@ -50,21 +73,10 @@ function computerPlay(){
 }
 
 
-//ply input value
-
-// function humanPlay(){
-
-//    let plyBrain = addEventListener;
- 
-//     return plyBrain;
-//   }
-
 
 // ply choice vs cpu
 
 function playRound(cpuSelect, plySelect) {
-
-
 
    if (plySelect === 'Scissors') {
       firstChoice();
@@ -75,6 +87,8 @@ function playRound(cpuSelect, plySelect) {
       thirdChoice();
    }
   
+
+
 
 //  eventualities and logic
 
@@ -132,25 +146,3 @@ function playRound(cpuSelect, plySelect) {
       page.appendChild(element);
    }
  }
-
-
- function game(){
-
-         buttons.forEach((buttonTag) => {
-            plySelect = buttonTag.id;
-         });
-       
-   let cpuSelect = computerPlay();
-        console.log(plySelect)
-        console.log(cpuSelect)
-         
-        playRound(cpuSelect, plySelect);
-
-         wpnChoice.textContent = `You chose ${plySelect} and your foe chose ${cpuSelect}`
-
-}
-
-
-
-
-
